@@ -3,18 +3,16 @@ services:
   pocketbase:
     build: ./backend
     volumes:
-      - ./backend/backup:/pb/backup
-      - ./backend/migrations:/pb/migrations
       - pocketbase_data:/pb/data
     ports:
       - "8090:8090"
 
   frontend:
-    build: ./frontend
-    volumes:
-      - ./frontend:/app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-
+      
 volumes:
   pocketbase_data:
