@@ -1,19 +1,13 @@
-FROM node:16 as build
+FROM node:16
 
 WORKDIR /app
 
-COPY frontend/package.json frontend/package-lock.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY frontend/ .
+COPY . .
 
-RUN npm run build
+EXPOSE 3000
 
-FROM nginx:stable-alpine
-
-COPY --from=build /app/build /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "dev"]
