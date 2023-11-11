@@ -2594,7 +2594,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!******************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fhomepages%2Fhomepage1&absolutePagePath=%2Fhome%2Frlsxsuredials%2FDesktop%2FDevelopment%2FCCosmetic%2Fsrc%2Fpages%2Fhomepages%2Fhomepage1.js ***!
   \******************************************************************************************************************************************************************************************/
@@ -2617,4 +2617,4 @@ eval("module.exports = dll_06495ea825aed670a1f6;//# sourceURL=[module]\n//# sour
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
