@@ -61,13 +61,13 @@ Sigue estos pasos para utilizar la aplicación después de haber iniciado los co
     
     Tienes dos opciones para restaurar la base de datos:
 
-    1. Restaurar las Migraciones:
+   - Restaurar las Migraciones:
             
         Utiliza este método si deseas tener solo las colecciones vacías.
         
         ![Screenshot from 2023-11-11 01-52-14](https://github.com/AkkaJaiderpls/CCosmetic/assets/82175311/60db6926-1d2a-4bfa-8aee-5a46c94d78dc)
 
-    2. Restaurar el Backup:
+   - Restaurar el Backup:
         
         Elige esta opción para tener las colecciones con datos predefinidos que se pueden modificar posteriormente.
         
