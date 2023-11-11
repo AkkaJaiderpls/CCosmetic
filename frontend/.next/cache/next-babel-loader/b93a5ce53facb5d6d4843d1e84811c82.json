@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useEffect } from 'react';\nimport { useRouter } from 'next/router';\nimport Head from 'next/head';\nexport default function Home() {\n  const router = useRouter();\n  useEffect(() => {\n    router.push('/homepages/homepage1');\n  }, []);\n  return null;\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport MenuOne from \"./Menu/MenuOne\";\nexport default function HeaderOne(props) {\n  return __jsx(React.Fragment, null, __jsx(MenuOne, props));\n}","map":null,"metadata":{},"sourceType":"module"}
