@@ -28,10 +28,10 @@ export default function Contact() {
   }, []);
 
   return (
-    <LayoutFour title="Contact us">
-      <Breadcrumb title="CONTÁCTANOS">
+    <LayoutFour title="CONTACTO">
+      <Breadcrumb title="CONTACTO">
         <BreadcrumbItem name="INICIO" />
-        <BreadcrumbItem name="CONTÁCTANOS" current />
+        <BreadcrumbItem name="CONTACTO" current />
       </Breadcrumb>
       <div className="contact">
         <div className="container">

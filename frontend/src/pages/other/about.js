@@ -84,7 +84,7 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <LayoutFour title="About us">
+    <LayoutFour title="NOSOTROS">
       <Breadcrumb title="NOSOTROS">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="NOSOTROS" current />

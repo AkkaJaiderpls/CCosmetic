@@ -19,6 +19,26 @@
     ],
     "/_polyfills": [
       "static/runtime/polyfills.js"
+    ],
+    "/homepages/homepage1": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/other/about": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/other/contact": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/other/services": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/shop/fullwidth-4col": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

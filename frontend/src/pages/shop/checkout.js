@@ -55,7 +55,7 @@ export default function Checkout() {
 
 
   return (
-    <LayoutFour title="Checkout">
+    <LayoutFour title="COMPRAR">
       <Breadcrumb title="COMPRAR">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="TIENDA" />

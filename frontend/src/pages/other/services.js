@@ -29,7 +29,7 @@ export default function services() {
   }, []);
 
   return (
-    <LayoutFour title="Services">
+    <LayoutFour title="SERVICIOS">
       <Breadcrumb title="SERVICIOS">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="SERVICIOS" current />

@@ -71,7 +71,7 @@ export default function ShopFullwidth() {
     fetchProductData();
   }, [offset, currentSort]);
   return (
-    <LayoutFour title="Shop Fullwidth 4 columns" container="wide">
+    <LayoutFour title="TIENDA" container="wide">
       <Breadcrumb title="TIENDA">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="TIENDA" current />

@@ -33,7 +33,7 @@ export default function () {
     return toast.error("Producto eliminado del carrito!");
   };
   return (
-    <LayoutFour title="Cart">
+    <LayoutFour title="CARRITO DE COMPRA">
       <Breadcrumb title="CARRITO DE COMPRA">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="TIENDA" />

@@ -30,7 +30,7 @@ export default function () {
     return toast.error("Producto eliminado de la lista de deseos!");
   };
   return (
-    <LayoutFour title="Wishlist">
+    <LayoutFour title="LISTA DE DESEOS">
       <Breadcrumb title="LISTA DE DESEOS">
         <BreadcrumbItem name="INICIO" />
         <BreadcrumbItem name="TIENDA" />

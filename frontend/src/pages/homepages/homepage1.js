@@ -171,7 +171,7 @@ export default function Homepage1() {
   }, []);
 
   return (
-    <LayoutOne title="Homepage 1" className="-style-1">
+    <LayoutOne title="INICIO" className="-style-1">
       <SliderTwo data={sliderData} className="-style-1" showDots />
       {introductionData.subTitle && <IntroductionOne data={introductionData} />}
       <IntroductionTwo data={introductionTwoData} />
