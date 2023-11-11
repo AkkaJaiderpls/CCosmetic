@@ -55,7 +55,7 @@ Sigue estos pasos para utilizar la aplicación después de haber iniciado los co
         
     Se requerirá crear una cuenta de administración con un correo electrónico y una contraseña.
 
-    !!IMAGEN!!
+    [!!IMAGEN!!](https://github.com/AkkaJaiderpls/CCosmetic/issues/new)
 
 4. Restaurar la Base de Datos:
     
