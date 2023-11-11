@@ -60,6 +60,7 @@ Sigue estos pasos para utilizar la aplicación después de haber iniciado los co
 4. Restaurar la Base de Datos:
     
     Tienes dos opciones para restaurar la base de datos:
+
     1. Restaurar las Migraciones:
             
         Utiliza este método si deseas tener solo las colecciones vacías.
