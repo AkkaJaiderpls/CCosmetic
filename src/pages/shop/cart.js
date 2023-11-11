@@ -25,29 +25,29 @@ export default function () {
   const removeAllProduct = (e) => {
     e.preventDefault();
     dispatch(removeAllFromCart());
-    return toast.error("All product removed from cart");
+    return toast.error("Todos los productos fueron eliminados del carrito!");
   };
   const removeProduct = (e, cartId) => {
     e.preventDefault();
     dispatch(removeFromCart(cartId));
-    return toast.error("Product removed from cart");
+    return toast.error("Producto eliminado del carrito!");
   };
   return (
     <LayoutFour title="Cart">
-      <Breadcrumb title="Shopping cart">
-        <BreadcrumbItem name="Home" />
-        <BreadcrumbItem name="Shop" />
-        <BreadcrumbItem name="Shopping cart" current />
+      <Breadcrumb title="CARRITO DE COMPRA">
+        <BreadcrumbItem name="INICIO" />
+        <BreadcrumbItem name="TIENDA" />
+        <BreadcrumbItem name="CARRITO DE COMPRA" current />
       </Breadcrumb>
       <div className="cart">
         <div className="container">
           {!cartState || cartState.length === 0 ? (
             <div className="cart__empty">
-              <h3>No product in cart</h3>
+              <h3>NO HAY PRODUCTOS EN EL CARRITO</h3>
               <Button
                 color="dark"
                 action={process.env.PUBLIC_URL + "/shop/fullwidth-4col"}
-                content="Shopping now"
+                content="COMPRAR AHORA"
               />
             </div>
           ) : (
@@ -64,10 +64,10 @@ export default function () {
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
+                        <th>PRODUCTO</th>
+                        <th>PRECIO</th>
+                        <th>CANTIDAD</th>
+                        <th>TOTAL</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -129,14 +129,14 @@ export default function () {
                   <Link href={process.env.PUBLIC_URL + "/shop/fullwidth-4col"}>
                     <a>
                       <i className="fal fa-long-arrow-left"></i>
-                      Continue Shopping
+                      CONTINUAR COMPRANDO
                     </a>
                   </Link>
 
                   <Link href="#">
                     <a onClick={(e) => removeAllProduct(e)}>
                       <i className="fal fa-trash"></i>
-                      Clear Shopping Cart
+                      LIMPIAR CARRITO DE COMPRA
                     </a>
                   </Link>
                 </div>
@@ -145,16 +145,16 @@ export default function () {
                 <div className="row">
                   <div className="col-12 col-md-8">
                     <div className="cart__total__discount">
-                      <p>Enter coupon code. It will be applied at checkout.</p>
+                      <p>INGRESA UN CÓDIGO DE CUPÓN.</p>
                       <div className="input-validator">
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <input
                             type="text"
                             name="discountCode"
-                            placeholder="Your code here"
+                            placeholder="TU CÓDIGO"
                             ref={register({ required: true })}
                           />
-                          <button className="btn -dark">Apply</button>
+                          <button className="btn -dark">APLICAR</button>
                         </form>
                         {errors.discountCode && (
                           <span className="input-error">
@@ -166,15 +166,15 @@ export default function () {
                   </div>
                   <div className="col-12 col-md-4">
                     <div className="cart__total__content">
-                      <h3>Cart Total</h3>
+                      <h3>TOTAL DEL CARRITO</h3>
                       <table>
                         <tbody>
                           <tr>
-                            <th>Subtotal</th>
+                            <th>SUBTOTAL</th>
                             <td>{calculateTotalPrice(cartState, true)}</td>
                           </tr>
                           <tr>
-                            <th>Total</th>
+                            <th>TOTAL</th>
                             <td className="final-price">
                               {calculateTotalPrice(cartState, true)}
                             </td>
@@ -186,7 +186,7 @@ export default function () {
                         width="100%"
                         action={process.env.PUBLIC_URL + "/shop/checkout"}
                         color="dark"
-                        content="Proceed to checkout"
+                        content="COMPRAR"
                       />
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import SubcribeEmail from "../Other/SubcribeEmail";
 
@@ -6,6 +7,59 @@ import footerLinks from "../../data/footer/links.json";
 import footerInfomation from "../../data/footer/info.json";
 
 export default function FooterOne() {
+  const [footerInformation, setFooterInformation] = useState({
+    address: "",
+    phone: "",
+    email: "",
+    open: "",
+  });
+  const [footerLinks, setFooterLinks] = useState({
+    accountLinks: [],
+    informationLinks: [],
+    creditLinks: [],
+  });
+  
+
+  useEffect(() => {
+    async function fetchFooterInformation() {
+      try {
+        const response = await fetch('http://localhost:8090/api/collections/information/records');
+        const data = await response.json();
+        if (data.items && data.items.length > 0) {
+          // Asumiendo que la información de contacto está en el primer elemento
+          setFooterInformation({
+            address: data.items[0].address,
+            phone: data.items[0].phone,
+            email: data.items[0].email,
+            open: data.items[0].open,
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching footer information:', error);
+      }
+    }
+
+    async function fetchFooterLinks() {
+      try {
+        const response = await fetch('http://localhost:8090/api/collections/links/records');
+        const data = await response.json();
+        if (data.items && data.items.length > 0) {
+          // Asumiendo que los enlaces están en el primer elemento
+          setFooterLinks({
+            accountLinks: data.items[0].accountLinks,
+            informationLinks: data.items[0].informationLinks,
+            creditLinks: data.items[0].creditLinks,
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching footer links:', error);
+      }
+    }
+
+    fetchFooterLinks();
+    fetchFooterInformation();
+  }, []);
+  
   return (
     <div className="footer-one">
       <div className="container">
@@ -21,10 +75,10 @@ export default function FooterOne() {
             </Link>
           </div>
           <div className="footer-one__header__newsletter">
-            <span>Subscribe Newletter:</span>
+            <span>SUSCRÍBETE:</span>
             <SubcribeEmail
               mailchimpUrl="https://jster.us7.list-manage.com/subscribe/post?u=ed40c0084a0c5ba31b3365d65&id=ec6f32bf5e"
-              placeholder="Enter your email"
+              placeholder="CORREO ELECTRÓNICO"
               btnContent={<i className="fas fa-paper-plane" />}
               className="footer-one-newsletter"
             />
@@ -37,26 +91,18 @@ export default function FooterOne() {
           <div className="row">
             <div className="col-12 col-md-6 col-lg-4">
               <div className="footer__section -info">
-                <h5 className="footer-title">Contact info</h5>
-                <p>
-                  Address: <span>{footerInfomation.address}</span>
-                </p>
-                <p>
-                  Phone: <span>{footerInfomation.phone}</span>
-                </p>
-                <p>
-                  Email: <span>{footerInfomation.email}</span>
-                </p>
-                <p>
-                  Opentime: <span>{footerInfomation.open}</span>
-                </p>
+              <h5 className="footer-title">INFORMACIÓN DE CONTACTO</h5>
+              <p>Dirección: <span>{footerInformation.address}</span></p>
+              <p>Teléfono: <span>{footerInformation.phone}</span></p>
+              <p>Correo: <span>{footerInformation.email}</span></p>
+              <p>Horarios: <span>{footerInformation.open}</span></p>
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
               <div className="footer__section -links">
                 <div className="row">
                   <div className="col-12 col-sm-6">
-                    <h5 className="footer-title">Account</h5>
+                    <h5 className="footer-title">CUENTA</h5>
                     <ul>
                       {footerLinks.accountLinks.map((link, index) => (
                         <li key={index}>
@@ -68,7 +114,7 @@ export default function FooterOne() {
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6">
-                    <h5 className="footer-title">Infomation</h5>
+                    <h5 className="footer-title">INFORMACIÓN</h5>
                     <ul>
                       {footerLinks.informationLinks.map((link, index) => (
                         <li key={index}>
@@ -84,11 +130,7 @@ export default function FooterOne() {
             </div>
             <div className="col-12 col-lg-4">
               <div className="footer__section -payment">
-                <h5 className="footer-title">Payment methods</h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  gravida facilisis.{" "}
-                </p>
+                <h5 className="footer-title">MÉTODOS DE PAGOS</h5>
                 <div className="payment-methods">
                   <img
                     src={
@@ -106,7 +148,7 @@ export default function FooterOne() {
       <div className="footer-one__footer">
         <div className="container">
           <div className="footer-one__footer__wrapper">
-            <p>© Copyright 2020 Beauty</p>
+            <p>© Copyright 2023 - MADAME NATURAL</p>
             <ul>
               {footerLinks.creditLinks.map((link, index) => (
                 <li key={index}>

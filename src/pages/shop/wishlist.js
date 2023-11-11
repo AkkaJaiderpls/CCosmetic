@@ -21,26 +21,26 @@ export default function () {
     let productItem = checkProductInCart(data.id);
     if (!productItem) {
       dispatch(addToCart(data));
-      return toast.success("Product added to cart !");
+      return toast.success("Producto añadido al carrito!");
     }
   };
   const removeWishlistProduct = (e, pid) => {
     e.preventDefault();
     dispatch(removeFromWishlist(pid));
-    return toast.error("Product removed from wishlist");
+    return toast.error("Producto eliminado de la lista de deseos!");
   };
   return (
     <LayoutFour title="Wishlist">
-      <Breadcrumb title="Wishlist">
-        <BreadcrumbItem name="Home" />
-        <BreadcrumbItem name="Shop" />
-        <BreadcrumbItem name="Wishlist" current />
+      <Breadcrumb title="LISTA DE DESEOS">
+        <BreadcrumbItem name="INICIO" />
+        <BreadcrumbItem name="TIENDA" />
+        <BreadcrumbItem name="LISTA DE DESEOS" current />
       </Breadcrumb>
       <div className="wishlist">
         <div className="container">
           {!wishlistState || wishlistState.length === 0 ? (
             <div className="wishlist__empty">
-              <h3>No product in wishlist</h3>
+              <h3>NO HAY PRODUCTOS EN LA LISTA DE DESEOS</h3>
             </div>
           ) : (
             <div className="wishlist__table">
@@ -54,9 +54,9 @@ export default function () {
                   </colgroup>
                   <thead>
                     <tr>
-                      <th>Product</th>
-                      <th>Unit Price</th>
-                      <th>Stock</th>
+                      <th>PRODUCTO</th>
+                      <th>PRECIO</th>
+                      <th>STOCK</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -87,7 +87,7 @@ export default function () {
                           </div>
                         </td>
                         <td>{formatCurrency(item.price)}</td>
-                        <td>{item.quantity > 0 ? "In stock" : "Out stock"}</td>
+                        <td>{item.quantity > 0 ? "DISPONIBLE" : "NO DISPONIBLE"}</td>
                         <td>
                           <a
                             href={process.env.PUBLIC_URL + "#"}
@@ -97,8 +97,8 @@ export default function () {
                             onClick={(e) => addToCartHandle(e, item)}
                           >
                             {checkProductInCart(item.id)
-                              ? "Added to cart"
-                              : "Add to cart"}
+                              ? "AÑADIDO AL CARRITO"
+                              : "AÑADIR AL CARRITO"}
                           </a>
                           <a
                             className="remove-btn"

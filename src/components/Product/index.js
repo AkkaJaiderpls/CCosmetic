@@ -44,7 +44,7 @@ function Product({ data, type, className }) {
     let productItem = checkProductInCart(cartState, data.id);
     if (!productItem && data.quantity > 0) {
       dispatch(addToCart(data, 1, otherColor && otherColor.color));
-      return toast.success("Product added to cart !");
+      return toast.success("Producto añadido al carrito!");
     }
   };
   const addToWishlistHandle = (e) => {
@@ -53,9 +53,9 @@ function Product({ data, type, className }) {
     dispatch(addToWishlist(data));
     toast.dismiss();
     if (!wishlistItem) {
-      return toast.success("Product added to wishlist !");
+      return toast.success("Producto añadido a la lista de deseos!");
     } else {
-      return toast.error("Product removed from wishlist !");
+      return toast.error("Producto retirado de la lista de deseos!");
     }
   };
 
@@ -70,15 +70,11 @@ function Product({ data, type, className }) {
               as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
             >
               <a className="product__thumb__image">
-                {data.thumbImage.map((img, index) => (
+                {data.thumbImage && (
                   <img
-                    key={index}
-                    src={process.env.PUBLIC_URL + img}
+                    src={data.thumbImage}
                     alt="Product image"
                   />
-                ))}
-                {otherColor && (
-                  <img src={otherColor.image} alt="Product image" />
                 )}
               </a>
             </Link>
@@ -186,16 +182,12 @@ function Product({ data, type, className }) {
               href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
               as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
             >
-              <a className="product-list__thumb__image">
-                {data.thumbImage.map((img, index) => (
+              <a className="product__thumb__image">
+                {data.thumbImage && (
                   <img
-                    key={index}
-                    src={process.env.PUBLIC_URL + img}
+                    src={data.thumbImage}
                     alt="Product image"
                   />
-                ))}
-                {otherColor && (
-                  <img src={otherColor.image} alt="Product image" />
                 )}
               </a>
             </Link>
@@ -230,11 +222,10 @@ function Product({ data, type, className }) {
                     {data.variation.map((color, index) => (
                       <div
                         key={index}
-                        className={`product-colors__item ${
-                          otherColor && otherColor.colorCode === color.colorCode
+                        className={`product-colors__item ${otherColor && otherColor.colorCode === color.colorCode
                             ? "active"
                             : ""
-                        }`}
+                          }`}
                         style={{ backgroundColor: color.colorCode }}
                         onClick={() => setOtherColor(color)}
                       />
@@ -245,8 +236,7 @@ function Product({ data, type, className }) {
             </div>
             <div className="product-list__content__bottom">
               <p className="product-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                ipsa fugiat accusantium reiciendis rem doloribus iste doloremque
+                {data.description}
               </p>
               <div className="product__actions">
                 <div className="product-btn">

@@ -1,9 +1,33 @@
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 
 import Button from "../../Control/Button";
 import { PrevArrow, NextArrow } from "../../Other/SliderArrow";
+import SectionTitleOne from "../SectionTitle/SectionTitleOne";
 
 export default function IntroductionNine() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    async function fetchImages() {
+      try {
+        const response = await fetch('http://localhost:8090/api/collections/brands/records');
+        const data = await response.json();
+        if (data.items && data.items.length > 0) {
+          const imageUrls = data.items[0].image_185x70.map(img => ({
+            src: `http://localhost:8090/api/files/${data.items[0].collectionId}/${data.items[0].id}/${img}`,
+            alt: 'Brand item'
+          }));
+          setImages(imageUrls);
+        }
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    }
+
+    fetchImages();
+  }, []);
+
   const settings = {
     dots: false,
     infinite: false,
@@ -33,36 +57,29 @@ export default function IntroductionNine() {
       },
     ],
   };
+
   return (
     <div className="introduction-nine">
       <div className="introduction-nine__logos">
         <div className="container">
+        <SectionTitleOne showSubTitle align="center" subTitle="NUESTRAS ALIANZAS">
+          MARCAS LÍDERES EN BELLEZA
+        </SectionTitleOne>
           <Slider {...settings}>
-            {Array.from(Array(7), (e, i) => {
-              return (
-                <div key={i} className="slide__item">
-                  <img
-                    src={
-                      process.env.PUBLIC_URL +
-                      `/assets/images/introduction/IntroductionNine/${
-                        i + 1
-                      }.png`
-                    }
-                    alt="Brand item"
-                  />
-                </div>
-              );
-            })}
+            {images.map((img, i) => (
+              <div key={i} className="slide__item">
+                <img src={img.src} alt={img.alt} />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>
       <div className="container">
         <div className="introduction-nine__content">
           <h3>
-            New items are <br />
-            released weekly.
+            Nuevos productos lanzados semanalmente.
           </h3>
-          <Button action="#" color="white" content="ALL NEW ITEMS" />
+          <Button action="/shop/fullwidth-4col" color="white" content="Ver Nuevos Productos" />
         </div>
       </div>
     </div>

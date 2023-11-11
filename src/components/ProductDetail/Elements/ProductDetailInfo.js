@@ -43,9 +43,9 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
         <h2>{data.name}</h2>
         <div className="product-detail__content__header__comment-block">
           <Rate currentRate={data.rate} />
-          <p>03 Reviews</p>
+          <p>03 RESEÑAS</p>
           <Link href={process.env.PUBLUC_URL + "#"}>
-            <a>Write a reviews</a>
+            <a>ESCRIBE UNA RESEÑA</a>
           </Link>
         </div>
         <h3>
@@ -59,16 +59,16 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
       <div className="product-detail__content__footer">
         <ul>
           <li>
-            Brand: <span>{data.brand}</span>
+            MARCA: <span>{data.brand}</span>
           </li>
           <li>
-            Product code: <span>{data.code}</span>
+            CÓDIGO DE PRODUCTO: <span>{data.code}</span>
           </li>
           <li>
-            Reward point: <span>{data.point}</span>
+            PUNTOS DE RECOMPENSAS: <span>{data.point}</span>
           </li>
           <li>
-            Availability:
+            DISPONIBILIDAD:
             {data.quantity > 0 ? (
               <span className="in-stock"> In Stock</span>
             ) : (

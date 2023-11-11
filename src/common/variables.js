@@ -11,11 +11,11 @@ export const shop = {
   BRANDS: ["gucci", "dolce", "h&m", "kenzo", "prada"],
   PRICE_POINTS: [0, 25, 50, 75, 100],
   SORT_TYPES: [
-    { name: "Default", value: "default" },
-    { name: "A to Z Sorting", value: "az" },
-    { name: "Z to A Sorting", value: "za" },
-    { name: "Low to High Price Sorting", value: "lowToHigh" },
-    { name: "High to Low Price Sorting", value: "highToLow" },
+    { name: "POR DEFECTO", value: "default" },
+    { name: "CLASIFICACIÓN A-Z", value: "az" },
+    { name: "CLASIFICACIÓN Z-A", value: "za" },
+    { name: "PRECIO BAJO A ALTO", value: "lowToHigh" },
+    { name: "PRECIO ALTO A BAJO", value: "highToLow" },
   ],
   DEFAULT_VIEW: "grid",
 };

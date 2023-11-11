@@ -5,6 +5,7 @@ import ProductSlider from "../Elements/ProductSlider";
 import { PrevArrow, NextArrow } from "../../../Other/SliderArrow";
 
 export default function ProductSlideOne({ data }) {
+  console.log(data);
   const settings = {
     speed: 500,
     slidesToShow: 4,
@@ -43,7 +44,7 @@ export default function ProductSlideOne({ data }) {
     <div className="product-slide">
       <div className="container">
         <SectionTitleOne align="center" spaceBottom="50px">
-          Beauty Products
+          NUESTROS PRODUCTOS
         </SectionTitleOne>
         <ProductSlider data={data} sliderSettings={settings} />
         <div className="text-center">
@@ -51,7 +52,7 @@ export default function ProductSlideOne({ data }) {
             action={process.env.PUBLIC_URL + "/shop/fullwidth-4col"}
             color="transparent"
             className="-underline"
-            content="View all product"
+            content="VER TODOS LOS PRODUCTOS"
           />
         </div>
       </div>

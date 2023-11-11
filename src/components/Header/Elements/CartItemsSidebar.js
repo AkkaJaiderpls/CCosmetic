@@ -19,9 +19,9 @@ function CartItemsSidebar({ showCart, setShowCart }) {
           classNames="cart-sidebar"
         >
           <div className="cart-items__wrapper">
-            <h2>Shopping cart</h2>
+            <h2>CARRITO DE COMPRAS</h2>
             {cartState.length === 0 ? (
-              <h3 className="empty-noti">No product in cart</h3>
+              <h3 className="empty-noti">NO HAY PRODUCTOS EN EL CARRITO</h3>
             ) : (
               <>
                 {cartState.length !== 0 &&
@@ -38,7 +38,7 @@ function CartItemsSidebar({ showCart, setShowCart }) {
                   ))}
                 <div className="cart-items__total">
                   <div className="cart-items__total__price">
-                    <h5>Total</h5>
+                    <h5>TOTAL</h5>
                     <span>{calculateTotalPrice(cartState, true)}</span>
                   </div>
                   <div className="cart-items__total__buttons">
@@ -46,13 +46,13 @@ function CartItemsSidebar({ showCart, setShowCart }) {
                       width="100%"
                       action={process.env.PUBLIC_URL + "/shop/cart"}
                       color="dark"
-                      content="View cart"
+                      content="VER CARRITO"
                     />
                     <Button
                       width="100%"
                       action={process.env.PUBLIC_URL + "/shop/checkout"}
                       color="red"
-                      content="Checkout"
+                      content="COMPRAR"
                     />
                   </div>
                 </div>

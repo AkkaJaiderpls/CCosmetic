@@ -1,6 +1,6 @@
 [
   {
-    "title": "Home",
+    "title": "INICIO",
     "to": "/homepages/homepage1",
     "subMenu": [
       { "title": "Beauty Salon", "to": "/homepages/homepage1" },
@@ -11,10 +11,10 @@
       { "title": "Skincare Shop", "to": "/homepages/homepage6" }
     ]
   },
-  { "title": "Services", "to": "/other/services" },
-  { "title": "About", "to": "/other/about" },
+  { "title": "SERVICIOS", "to": "/other/services" },
+  { "title": "NOSOTROS", "to": "/other/about" },
   {
-    "title": "Shop",
+    "title": "TIENDA",
     "to": "/shop/fullwidth-4col",
 
     "subMenu": [
@@ -41,6 +41,5 @@
       { "title": "Wish list", "to": "/shop/wishlist" }
     ]
   },
-  { "title": "Blog", "to": "/blog" },
-  { "title": "Contact", "to": "/other/contact" }
+  { "title": "CONTACTO", "to": "/other/contact" }
 ]
