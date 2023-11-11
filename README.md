@@ -64,12 +64,13 @@ Sigue estos pasos para utilizar la aplicación después de haber iniciado los co
             
         Utiliza este método si deseas tener solo las colecciones vacías.
         
-        !!IMAGEN!!
+        ![Screenshot from 2023-11-11 01-52-14](https://github.com/AkkaJaiderpls/CCosmetic/assets/82175311/60db6926-1d2a-4bfa-8aee-5a46c94d78dc)
+
     2. Restaurar el Backup:
         
         Elige esta opción para tener las colecciones con datos predefinidos que se pueden modificar posteriormente.
         
-        !!IMAGEN!!
+        ![Screenshot from 2023-11-11 01-52-28](https://github.com/AkkaJaiderpls/CCosmetic/assets/82175311/ba9ff3a0-c141-430d-aedc-39112f587655)
         
     Nota: Ambos métodos tienen sus archivos correspondientes en la carpeta backend, dentro de las subcarpetas migrations y backup.
 
