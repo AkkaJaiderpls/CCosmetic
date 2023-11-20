@@ -5,7 +5,6 @@ import ProductSlider from "../Elements/ProductSlider";
 import { PrevArrow, NextArrow } from "../../../Other/SliderArrow";
 
 export default function ProductSlideOne({ data }) {
-  console.log(data);
   const settings = {
     speed: 500,
     slidesToShow: 4,

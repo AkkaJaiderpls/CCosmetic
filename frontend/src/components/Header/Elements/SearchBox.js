@@ -24,7 +24,7 @@ export default function SearchBox({ showSearch, setShowSearch }) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="What are you looking for?"
+            placeholder="Qué estás buscandp?"
             name="search"
             ref={register}
           />

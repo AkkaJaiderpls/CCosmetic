@@ -23,7 +23,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
   const onAddToCart = (e) => {
     e.preventDefault();
     dispatch(addToCart(data, quantity, otherColor));
-    toast.success("Product added to cart");
+    toast.success("Producto añadido al carrito!");
   };
   const onAddToWishList = (e) => {
     e.preventDefault();
@@ -31,9 +31,9 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
     dispatch(addToWishlist(data));
     toast.dismiss();
     if (!product) {
-      return toast.success("Product added to wishlist !");
+      return toast.success("Producto añadido a la lista de deseos!");
     } else {
-      return toast.error("Product removed from wishlist !");
+      return toast.error("Producto eliminado de la lista de deseos!");
     }
   };
   return (
@@ -70,9 +70,9 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
           <li>
             DISPONIBILIDAD:
             {data.quantity > 0 ? (
-              <span className="in-stock"> In Stock</span>
+              <span className="in-stock">DISPONIBLE</span>
             ) : (
-              <span className="out-stock"> Out Stock</span>
+              <span className="out-stock">NO DISPONIBLE</span>
             )}
           </li>
         </ul>

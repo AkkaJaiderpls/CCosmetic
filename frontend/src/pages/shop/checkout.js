@@ -313,7 +313,6 @@ export default function Checkout() {
           </div>
         </div>
       </div>
-      <InstagramTwo />
     </LayoutFour>
   );
 }

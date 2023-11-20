@@ -62,16 +62,6 @@ export default function IntroductionNine() {
     <div className="introduction-nine">
       <div className="introduction-nine__logos">
         <div className="container">
-        <SectionTitleOne showSubTitle align="center" subTitle="NUESTRAS ALIANZAS">
-          MARCAS LÍDERES EN BELLEZA
-        </SectionTitleOne>
-          <Slider {...settings}>
-            {images.map((img, i) => (
-              <div key={i} className="slide__item">
-                <img src={img.src} alt={img.alt} />
-              </div>
-            ))}
-          </Slider>
         </div>
       </div>
       <div className="container">

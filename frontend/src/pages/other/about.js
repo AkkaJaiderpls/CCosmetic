@@ -97,7 +97,6 @@ export default function AboutUs() {
       />
       <IntroductionNine/>
       <Benefits />
-      <InstagramTwo />
     </LayoutFour>
   );
 }

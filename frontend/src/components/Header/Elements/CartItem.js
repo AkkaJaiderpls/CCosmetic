@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 function CartItem(props) {
   const dispatch = useDispatch();
-  const { image, name, price, quantity, cartId, slug } = props;
+  const { image, name, price, quantity, cartId } = props;
   const removeProductHandle = (e) => {
     e.preventDefault();
     dispatch(removeFromCart(cartId));
@@ -20,8 +20,8 @@ function CartItem(props) {
       </div>
       <div className="cart-item__info">
         <Link
-          href={process.env.PUBLIC_URL + "/shop/product/[slug]"}
-          as={process.env.PUBLIC_URL + "/shop/product/" + slug}
+          href={""}
+          as={""}
         >
           <a>{name}</a>
         </Link>

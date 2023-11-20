@@ -55,7 +55,7 @@ function Product({ data, type, className }) {
     if (!wishlistItem) {
       return toast.success("Producto añadido a la lista de deseos!");
     } else {
-      return toast.error("Producto retirado de la lista de deseos!");
+      return toast.error("Producto eliminado de la lista de deseos!");
     }
   };
 
@@ -66,8 +66,8 @@ function Product({ data, type, className }) {
           <div className="product-type">{renderType()}</div>
           <div className="product__thumb">
             <Link
-              href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
-              as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
+              href={""}
+              as={""}
             >
               <a className="product__thumb__image">
                 {data.thumbImage && (
@@ -96,7 +96,7 @@ function Product({ data, type, className }) {
                 ></Button>
               </div>
               <ReactTooltip id="cartIcon" type="dark" effect="solid">
-                <span>Add to Cart</span>
+                <span>Añadir al Carrito</span>
               </ReactTooltip>
               <div className="product-btn" data-tip data-for="qvIcon">
                 <Button
@@ -113,7 +113,7 @@ function Product({ data, type, className }) {
                 ></Button>
               </div>
               <ReactTooltip id="qvIcon" type="dark" effect="solid">
-                <span>Quick view</span>
+                <span>Vista Rápida</span>
               </ReactTooltip>
               <div className="product-btn" data-tip data-for="wlIcon">
                 <Button
@@ -129,7 +129,7 @@ function Product({ data, type, className }) {
                 ></Button>
               </div>
               <ReactTooltip id="wlIcon" type="dark" effect="solid">
-                <span>Add to Wishlist</span>
+                <span>Lista de Deseos</span>
               </ReactTooltip>
             </div>
           </div>
@@ -139,8 +139,8 @@ function Product({ data, type, className }) {
               <Rate currentRate={data.rate} />
             </div>
             <Link
-              href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
-              as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
+              href={"#"}
+              as={"#"}
             >
               <a className="product-name">{data.name}</a>
             </Link>
@@ -179,7 +179,7 @@ function Product({ data, type, className }) {
           <div className="product-list__thumb">
             <div className="product-type">{renderType()}</div>
             <Link
-              href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
+              href={`${process.env.PUBLIC_URL}#`}
               as={`${process.env.PUBLIC_URL}/shop/product/${data.slug}`}
             >
               <a className="product__thumb__image">
@@ -264,7 +264,7 @@ function Product({ data, type, className }) {
                   ></Button>
                 </div>
                 <ReactTooltip id="l-qvIcon" type="dark" effect="solid">
-                  <span>Quick view</span>
+                  <span>Vista Rápida</span>
                 </ReactTooltip>
                 <div
                   className="product-btn"

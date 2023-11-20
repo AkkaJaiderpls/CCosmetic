@@ -13,7 +13,7 @@ export default function AddToCart({ onClick, className }) {
         content={<i className="fas fa-shopping-bag"></i>}
       />
 
-      <h5>Add to cart</h5>
+      <h5>AÑADIR AL CARRITO</h5>
     </div>
   );
 }

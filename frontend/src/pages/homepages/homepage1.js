@@ -15,6 +15,7 @@ export default function Homepage1() {
   const [productData, setProductData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
   const [teamData, setTeamData] = useState([]);
+  const [categories, setCategories] = useState({});
 
   useEffect(() => {
     async function fetchSliderData() {
@@ -86,12 +87,26 @@ export default function Homepage1() {
       }
     }
 
-    async function fetchProductData() {
+    async function fetchCategories() {
+      try {
+        const response = await fetch('http://localhost:8090/api/collections/categories/records');
+        const data = await response.json();
+        const categoriesMap = {};
+        data.items.forEach((category) => {
+          categoriesMap[category.id] = category.categorieName;
+        });
+        setCategories(categoriesMap);
+        fetchProductData(categoriesMap); // Llamamos a fetchProductData aquí
+      } catch (error) {
+        console.error('Error fetching categories data:', error);
+      }
+    }
+
+    async function fetchProductData(categoriesMap) {
       try {
         const response = await fetch('http://localhost:8090/api/collections/products/records');
         const data = await response.json();
         const formattedData = data.items.map((item) => ({
-          iid: item.id,
           category: item.category,
           name: item.name,
           rate: item.rate,
@@ -101,6 +116,7 @@ export default function Homepage1() {
           code: item.code,
           point: item.point,
           quantity: item.quantity,
+          category: item.categorieName.map((categoryId) => categoriesMap[categoryId]).filter(Boolean),
           colorVariations: [
             {
               color: "red",
@@ -119,10 +135,9 @@ export default function Homepage1() {
             `http://localhost:8090/api/files/${item.collectionId}/${item.id}/${img}`
           ),
           description: item.description,
-          slug: item.slug
         }));
         setProductData(formattedData);
-      } catch (error) {
+        } catch (error) {
         console.error('Error fetching product data:', error);
       }
     }
@@ -162,12 +177,13 @@ export default function Homepage1() {
       }
     }
 
-    fetchTeamData();
+    console.log("useEffect: Iniciando todas las solicitudes");
+    fetchCategories(); // Asegúrate de llamar primero a esta función
     fetchSliderData();
     fetchIntroductionData();
     fetchIntroductionTwoData();
-    fetchProductData();
     fetchTestimonialData();
+    fetchTeamData();
   }, []);
 
   return (

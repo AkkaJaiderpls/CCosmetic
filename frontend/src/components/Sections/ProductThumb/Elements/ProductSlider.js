@@ -1,5 +1,4 @@
 import Slider from "react-slick";
-
 import Product from "../../../Product";
 
 export default function ProductSlider({ data, sliderSettings }) {

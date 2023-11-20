@@ -41,7 +41,7 @@ export default function services() {
             bigImgSrc={item.bigImgSrc}
             smallImgSrc={item.smallImgSrc}
             title={item.title}
-            features={item.features} // Pasar las características como props
+            features={item.features} 
             order={formatSingleNumber(index + 1)}
             reverse={index % 2 === 1}
           />

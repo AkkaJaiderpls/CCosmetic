@@ -21,7 +21,7 @@ function CartItemsSidebar({ showCart, setShowCart }) {
           <div className="cart-items__wrapper">
             <h2>CARRITO DE COMPRAS</h2>
             {cartState.length === 0 ? (
-              <h3 className="empty-noti">NO HAY PRODUCTOS EN EL CARRITO</h3>
+              <h3 className="empty-noti">NO HAY PRODUCTOS</h3>
             ) : (
               <>
                 {cartState.length !== 0 &&
@@ -60,7 +60,7 @@ function CartItemsSidebar({ showCart, setShowCart }) {
             )}
           </div>
         </CSSTransition>
-      </ClientOnlyPortal>
+      </ClientOnlyPortal>    
       {showCart && (
         <ClientOnlyPortal selector="#overlay">
           <div className="overlay" onClick={() => setShowCart(false)}></div>

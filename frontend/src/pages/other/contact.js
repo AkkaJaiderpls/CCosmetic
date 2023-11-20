@@ -116,7 +116,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <InstagramTwo />
     </LayoutFour>
   );
 }

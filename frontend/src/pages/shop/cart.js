@@ -21,7 +21,7 @@ export default function () {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
   const cartState = useSelector((state) => state.cartReducer);
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data);
   const removeAllProduct = (e) => {
     e.preventDefault();
     dispatch(removeAllFromCart());
@@ -43,7 +43,7 @@ export default function () {
         <div className="container">
           {!cartState || cartState.length === 0 ? (
             <div className="cart__empty">
-              <h3>NO HAY PRODUCTOS EN EL CARRITO</h3>
+              <h3>NO HAY PRODUCTOS</h3>
               <Button
                 color="dark"
                 action={process.env.PUBLIC_URL + "/shop/fullwidth-4col"}
@@ -77,19 +77,16 @@ export default function () {
                           <td>
                             <div className="cart-product">
                               <div className="cart-product__image">
-                                <img src={item.thumbImage[0]} alt={item.name} />
+                                <img src={item.thumbImage} alt={item.name} />
                               </div>
                               <div className="cart-product__content">
                                 <h5>{item.category}</h5>
                                 <Link
                                   href={
-                                    process.env.PUBLIC_URL +
-                                    "/shop/product/[slug]"
+                                    ""
                                   }
                                   as={
-                                    process.env.PUBLIC_URL +
-                                    "/shop/product/" +
-                                    item.slug
+                                    ""
                                   }
                                 >
                                   <a>{item.name}</a>
@@ -196,7 +193,6 @@ export default function () {
           )}
         </div>
       </div>
-      <InstagramTwo />
     </LayoutFour>
   );
 }
