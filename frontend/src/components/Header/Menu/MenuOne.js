@@ -6,13 +6,15 @@ import MenuFunctionIcons from "../Elements/MenuFunctionIcons";
 import { renderContainer } from "../../../common/utils";
 
 export default function MenuOne({ container }) {
+  const logoUrl = "http://127.0.0.1:8090/api/files/fs7yoxirvx8dxtl/gl9bc9cf6d6x723/logo115x40_8byAXbBXD9.png?token=";
+
   return (
     <div className="menu -style-1">
       <div className={renderContainer(container)}>
         <div className="menu__wrapper">
           <Link href="/homepages/homepage1">
             <a className="menu__wrapper__logo">
-              <img src="/assets/images/logo.png" alt="Logo" />
+              <img src={logoUrl} alt="Logo" />
             </a>
           </Link>
           <Navigator />

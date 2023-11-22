@@ -16,7 +16,7 @@ export default function TopNavOne({ container }) {
             MADAME NATURAL
           </p>
           <div className="top-nav__wrapper__selectors">
-            <Link href={"/login"}>
+            <Link href={"/administration/login"}>
               <a className="top-nav__auth">ADMINISTRACIÓN</a>
             </Link>
           </div>

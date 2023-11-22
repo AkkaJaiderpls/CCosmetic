@@ -18,7 +18,7 @@ export default function FooterOne() {
     informationLinks: [],
     creditLinks: [],
   });
-  
+  const [logoUrl, setLogoUrl] = useState('');
 
   useEffect(() => {
     async function fetchFooterInformation() {
@@ -56,6 +56,16 @@ export default function FooterOne() {
       }
     }
 
+    async function fetchLogo() {
+      try {
+        const response = await fetch('http://127.0.0.1:8090/api/files/fs7yoxirvx8dxtl/gl9bc9cf6d6x723/logo100x35_0bdao4vXPV.png?token=');
+        setLogoUrl(response.url);
+      } catch (error) {
+        console.error('Error fetching logo:', error);
+      }
+    }
+
+    fetchLogo();
     fetchFooterLinks();
     fetchFooterInformation();
   }, []);
@@ -64,16 +74,13 @@ export default function FooterOne() {
     <div className="footer-one">
       <div className="container">
         <div className="footer-one__header">
-          <div className="footer-one__header__logo">
-            <Link href={process.env.PUBLIC_URL + "/homepages/homepage1"}>
-              <a>
-                <img
-                  src={process.env.PUBLIC_URL + "/assets/images/logo.png"}
-                  alt="Logo"
-                />
-              </a>
-            </Link>
-          </div>
+        <div className="footer-one__header__logo">
+        <Link href="/homepages/homepage1">
+          <a>
+            {logoUrl && <img src={logoUrl} alt="Logo" />}
+          </a>
+        </Link>
+      </div>
           <div className="footer-one__header__newsletter">
             <span>SUSCRÍBETE:</span>
             <SubcribeEmail

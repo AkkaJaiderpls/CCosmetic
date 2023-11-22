@@ -16,6 +16,8 @@ const data = [
   { title: "Nails", to: "/shop/fullwidth-4col" },
 ];
 
+const logoUrl = "http://127.0.0.1:8090/api/files/fs7yoxirvx8dxtl/gl9bc9cf6d6x723/logo115x40_8byAXbBXD9.png?token=";
+
 export default function MenuTwo({ container }) {
   return (
     <div className="menu -style-2">
@@ -26,9 +28,11 @@ export default function MenuTwo({ container }) {
             <ul className="navigator_part -left">
               {data.slice(0, 4).map((item, index) => (
                 <li key={index}>
-                  <Link href={process.env.PUBLIC_URL + item.to}>
-                    <a>{item.title}</a>
-                  </Link>
+                  <Link href="/homepages/homepage1">
+            <a className="menu__wrapper__logo">
+              <img src={logoUrl} alt="Logo" />
+            </a>
+          </Link>
                 </li>
               ))}
             </ul>

@@ -6,16 +6,14 @@ import MenuFunctionIcons from "../Elements/MenuFunctionIcons";
 import { renderContainer } from "../../../common/utils";
 
 export default function MenuThree({ hide, container }) {
+  const logoUrl = "http://127.0.0.1:8090/api/files/fs7yoxirvx8dxtl/gl9bc9cf6d6x723/logo115x40_8byAXbBXD9.png?token=";
   return (
     <div className="menu -style-3">
       <div className={renderContainer(container)}>
         <div className="menu__wrapper">
-          <Link href="/homepages/homepage1">
+        <Link href="/homepages/homepage1">
             <a className="menu__wrapper__logo">
-              <img
-                src={process.env.PUBLIC_URL + "/assets/images/logo-white.png"}
-                alt="Logo"
-              />
+              <img src={logoUrl} alt="Logo" />
             </a>
           </Link>
           <Navigator className="-white" />

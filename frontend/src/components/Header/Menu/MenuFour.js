@@ -22,9 +22,11 @@ export default function MenuFour({ hide, container }) {
             <ul>
               {menuData.map((item, index) => (
                 <li key={index}>
-                  <Link href={process.env.PUBLIC_URL + item.to}>
-                    <a>{item.title}</a>
-                  </Link>
+                  <Link href="/homepages/homepage1">
+            <a className="menu__wrapper__logo">
+              <img src={logoUrl} alt="Logo" />
+            </a>
+          </Link>
                 </li>
               ))}
             </ul>
