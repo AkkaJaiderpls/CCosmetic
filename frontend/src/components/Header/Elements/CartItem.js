@@ -13,6 +13,7 @@ function CartItem(props) {
     dispatch(removeFromCart(cartId));
     toast.error("Producto eliminado del carrito!");
   };
+  console.log("Image URL:", process.env.PUBLIC_URL + image);
   return (
     <div className="cart-item">
       <div className="cart-item__image">

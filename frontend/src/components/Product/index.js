@@ -26,7 +26,7 @@ function Product({ data, type, className }) {
   const cartState = useSelector((state) => state.cartReducer);
   const wishlistData = useSelector((state) => state.wishlistReducer);
   const [showQuickView, setShowQuickView] = useState(false);
-  const [otherColor, setOtherColor] = useState();
+  const [otherColor, setOtherColorz] = useState();
   const percentDiscount = data.discount
     ? Math.ceil(100 - (100 * data.discount) / data.price)
     : null;

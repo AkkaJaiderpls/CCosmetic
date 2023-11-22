@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/homepages/homepage1": [
+    "/administration/product": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/shop/cart": [
+    "/administration/user": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

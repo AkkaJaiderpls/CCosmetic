@@ -21,7 +21,6 @@ export default function () {
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, errors } = useForm();
   const cartState = useSelector((state) => state.cartReducer);
-  const onSubmit = (data);
   const removeAllProduct = (e) => {
     e.preventDefault();
     dispatch(removeAllFromCart());
@@ -144,7 +143,7 @@ export default function () {
                     <div className="cart__total__discount">
                       <p>INGRESA UN CÓDIGO DE CUPÓN.</p>
                       <div className="input-validator">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form>
                           <input
                             type="text"
                             name="discountCode"
