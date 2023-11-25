@@ -53,7 +53,7 @@ const Administration = () => {
                 <Link href="/administration/user" passHref>
                     <div className="admin-list-item">ADMINISTRACIÓN DE USUARIOS</div>
                 </Link>
-                <Link href="/administration/services" passHref>
+                <Link href="/administration/service" passHref>
                     <div className="admin-list-item">ADMINISTRACIÓIN DE SERVICIOS</div>
                 </Link>
                 <Link href="/administration/sales" passHref>

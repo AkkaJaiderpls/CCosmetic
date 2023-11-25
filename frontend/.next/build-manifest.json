@@ -20,23 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/administration/admin": [
+    "/administration/sales": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/administration/login": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/administration/meets": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/homepages/homepage1": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/other/services": [
+    "/shop/checkout": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
